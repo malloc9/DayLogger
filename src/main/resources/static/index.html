@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="daylogger">
+<head>
+    <meta charset="UTF-8">
+    <title>DayLogger</title>
+</head>
+<body>
+<script type="text/javascript" src="./js/bundle.js"></script>
+<link href='./css/bootstrap.css' rel="stylesheet" type="text/css" />
+
+
+<div ng-controller="mainController">
+    <div>
+    <button class="bg-success" ng-click="initData()">Init data</button>
+
+    <button class="bg-info" ng-click="listData()">List data</button>
+
+    </div>
+    <div ng-controller="mainController">
+        <div ui-grid="{ data: testdata }" class="myGrid"></div>
+    </div>
+</div>
+
+
+</body>
+</html>

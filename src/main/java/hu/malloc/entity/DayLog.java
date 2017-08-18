@@ -8,16 +8,32 @@ public class DayLog {
 
     @Id
     @GeneratedValue
-    long id;
+    private long id;
 
     @Column
-    String log;
+    private String log;
 
-    // spring-data miatt
+    // spring-data needs it
     public DayLog() {
     }
 
     public DayLog(String log) {
         this.log = log;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getLog() {
+        return log;
+    }
+
+    @Override
+    public String toString() {
+        return "DayLog{" +
+                "id=" + id +
+                ", log='" + log + '\'' +
+                '}';
     }
 }

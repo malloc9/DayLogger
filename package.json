@@ -1,0 +1,32 @@
+{
+  "name": "daylogger",
+  "version": "1.0.0",
+  "description": "test project (spring boot and angularjs)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malloc9/DayLogger.git"
+  },
+  "keywords": [
+    "spring",
+    "boot",
+    "angularjs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malloc9/DayLogger/issues"
+  },
+  "homepage": "https://github.com/malloc9/DayLogger#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7",
+    "angular-ui-grid": "^4.0.6"
+  }
+}

@@ -3,8 +3,12 @@ package hu.malloc.controller;
 import hu.malloc.entity.DayLog;
 import hu.malloc.repository.DayLogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class DayLoggerController {
@@ -12,14 +16,19 @@ public class DayLoggerController {
     @Autowired
     DayLogRepository dayLogRepository;
 
-    @RequestMapping("/init")
-    public String init() {
-        dayLogRepository.save(new DayLog("testValue"));
-        return "init successful";
+    @GetMapping(value="/")
+    public String homepage(){
+        return "index";
     }
 
-    @RequestMapping("/list")
-    public String list() {
-        return dayLogRepository.findAll().toString();
+    @GetMapping("/init")
+    public void init() {
+        dayLogRepository.save(new DayLog("testValue"));
+    }
+
+    @GetMapping(value = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public List<DayLog> list() {
+        return dayLogRepository.findAll();
     }
 }
